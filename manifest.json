@@ -1,0 +1,18 @@
+"manifest_version": 3,
+"name": "Pause & Plan"
+"Description": "Encourages reasonable spending at checkout.",
+"version": "1.0",
+"permissions": [3]
+"host_permissions": ["<all_urls>"],
+"action": {
+    "default_popup": "popup.html",
+    "default_title": "Pause & Plan"
+},
+"content_scripts": {
+{
+    "matches": ["*://*/*"],
+    "js": ["content.js"]
+    "css":["styles.css"] 
+    }
+]
+}
