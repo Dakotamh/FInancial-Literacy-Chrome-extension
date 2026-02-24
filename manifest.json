@@ -1,18 +1,19 @@
-"manifest_version": 3,
-"name": "SpendSave"
-"Description": "Encourages reasonable spending at checkout.",
-"version": "1.0",
-"permissions": [3]
-"host_permissions": ["<all_urls>"],
-"action": {
+{
+  "manifest_version": 3,
+  "name": "SpendSave",
+  "description": "Encourages reasonable spending at checkout.",
+  "version": "1.0",
+  "permissions": ["activeTab"],
+  "host_permissions": ["<all_urls>"],
+  "action": {
     "default_popup": "popup.html",
     "default_title": "Pause & Plan"
-},
-"content_scripts": {
-{
-    "matches": ["*://*/*"],
-    "js": ["content.js"]
-    "css":["styles.css"] 
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*/*"],
+      "js": ["content.js"],
+      "css": ["styles.css"]
     }
-]
+  ]
 }
