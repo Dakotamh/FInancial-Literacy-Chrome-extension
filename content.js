@@ -98,39 +98,43 @@ function createOverlay() {
   overlay.id = "SpendSave-overlay";
 
   overlay.innerHTML = `
-    <div class="pause-box">
-      <h2>SpendSave</h2>
-      <p>${generateInvestmentPrompt()}</p>
+  <div class="pause-box">
+    <h2>SpendSave</h2>
 
-<p style="margin-top:10px;">
-  ${getMixedPrompt()}
-</p>
+    <p>${generateInvestmentPrompt()}</p>
 
-<p style="font-size:12px; color:gray; margin-top:8px;">
-  💡 ${getRandomMicroLesson()}
-</p>
-      <label>
-        <input type="radio" name="type" value="need"> Need
-      </label>
-      <label>
-        <input type="radio" name="type" value="want"> Want
-      </label>
+    <p style="margin-top:10px;">
+      ${getMixedPrompt()}
+    </p>
 
-      <br><br>
+    <p style="font-size:12px; color:gray; margin-top:8px;">
+      💡 ${getRandomMicroLesson()}
+    </p>
 
-      <label>
-        <input type="checkbox" id="wait"> Wait 24 hours?
-      </label>
+    <label>
+      <input type="radio" name="type" value="need"> Need
+    </label>
 
-      <br><br>
+    <label>
+      <input type="radio" name="type" value="want"> Want
+    </label>
 
-      <button id="saveDecision">Save Decision</button>
-    </div>
-  `;
+    <br><br>
+
+    <label>
+      <input type="checkbox" id="wait"> Wait 24 hours?
+    </label>
+
+    <br><br>
+
+    <button id="saveDecision">Save Decision</button>
+  </div>
+`;
 
   document.body.appendChild(overlay);
 
   document.getElementById("saveDecision").onclick = saveDecision;
+ 
 }
 function getSmartCategoryPrompt() {
   const hour = new Date().getHours();
@@ -164,7 +168,7 @@ function getMixedPrompt() {
 
 function saveDecision() {
   const type = document.querySelector('input[name="type"]:checked')?.value;
-  const wait = document.getElementById("wait").checked;
+  const wait = document.getElementById("wait")?.checked;
 
   const decision = {
     type,
@@ -176,13 +180,11 @@ function saveDecision() {
   chrome.storage.local.get(["decisions"], (result) => {
     const decisions = result.decisions || [];
     decisions.push(decision);
-
     chrome.storage.local.set({ decisions });
   });
 
-  document.getElementById("SpendSave-overlay").remove();
+  document.getElementById("SpendSave-overlay")?.remove();
 }
-
 // -------- Trigger --------
 
 if (isCheckoutPage()) {
