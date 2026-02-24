@@ -7,7 +7,7 @@
   "host_permissions": ["<all_urls>"],
   "action": {
     "default_popup": "popup.html",
-    "default_title": "Pause & Plan"
+    "default_title": "SpendSave"
   },
   "content_scripts": [
     {
