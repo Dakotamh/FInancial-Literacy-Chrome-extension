@@ -1,5 +1,5 @@
 "manifest_version": 3,
-"name": "Pause & Plan"
+"name": "SpendSave"
 "Description": "Encourages reasonable spending at checkout.",
 "version": "1.0",
 "permissions": [3]
