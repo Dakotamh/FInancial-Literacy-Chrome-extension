@@ -1,36 +1,30 @@
-#SpendSave-overlay {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  z-index: 999999;
-}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>SpendSave</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <h1>SpendSave</h1>
+    <p>Your financial pause button.</p>
 
-.pause-box {
-  background: white;
-  padding: 20px;
-  width: 260px;
-  border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-  font-family: Arial, sans-serif;
-}
+    <div class="stats">
+      <div>
+        <h2 id="total">0</h2>
+        <p>Total Decisions</p>
+      </div>
 
-.pause-box h2 {
-  margin-top: 0;
-}
+      <div>
+        <h2 id="wants">0</h2>
+        <p>Wants</p>
+      </div>
+    </div>
 
-.pause-box button {
-  margin-top: 10px;
-  padding: 8px 10px;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-}
+    <button id="clear">Clear History</button>
+  </div>
 
-#saveDecision {
-  background: #4CAF50;
-  color: white;
-}
-
-#closeOverlay {
-  background: #ccc;
-}
+  <script src="popup.js"></script>
+</body>
+</html>
