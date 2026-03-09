@@ -1,3 +1,3 @@
-A browser extension that analyzes what you're about to buy online and gives instant financial awareness feedback before checkout
+A browser extension that analyzes what you're about to buy online and gives instant financial awareness feedback before checkout. Created with Node.JS, HTML, CSS, JavaScript, MongoDB. This project was a solo one meant to solve my own habit as well as many others with buying stuff that you do not exactly need. This software uses psychological as well as sociological elements to help reduce the amount of money you waste on an item you do not need as it challenges your thinking to make you wonder if you should spend on materialistic things or invest into a fund to preserve your money.
 
 If you are interested in testing this, download the folder then go to extensions in your web browser -> load unpacked and select the folder and then when you go to checkout something you will see it.
